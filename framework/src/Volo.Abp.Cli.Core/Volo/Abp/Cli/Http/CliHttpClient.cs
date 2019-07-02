@@ -5,13 +5,15 @@ using System.Text;
 
 namespace Volo.Abp.Cli.Http
 {
-    public class CliHttpClient : HttpClient
+    public class CliHttpClient
     {
-        public CliHttpClient() : base(new CliHttpClientHandler())
-        {
-            Timeout = TimeSpan.FromSeconds(30);
+        public HttpClient Client { get; private set; }
 
-            AddAuthentication(this);
+        public CliHttpClient(HttpClient httpClient)
+        {
+            httpClient.Timeout = TimeSpan.FromSeconds(30);
+            AddAuthentication(httpClient);
+            Client = httpClient;
         }
 
         private static void AddAuthentication(HttpClient client)

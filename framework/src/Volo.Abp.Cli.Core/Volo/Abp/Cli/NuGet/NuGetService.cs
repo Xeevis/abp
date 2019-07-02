@@ -3,6 +3,7 @@ using NuGet.Versioning;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Volo.Abp.Cli.Http;
 using Volo.Abp.DependencyInjection;
@@ -17,40 +18,41 @@ namespace Volo.Abp.Cli.NuGet
 
         protected ICancellationTokenProvider CancellationTokenProvider { get; }
 
+        protected HttpClient HttpClient { get; }
+
         public NuGetService(
             IJsonSerializer jsonSerializer,
-            ICancellationTokenProvider cancellationTokenProvider)
+            ICancellationTokenProvider cancellationTokenProvider,
+            CliHttpClient cliHttpClient)
         {
             JsonSerializer = jsonSerializer;
             CancellationTokenProvider = cancellationTokenProvider;
+            HttpClient = cliHttpClient.Client;
         }
 
         public async Task<SemanticVersion> GetLatestVersionOrNullAsync(string packageId, bool includePreviews = false, bool includeNightly = false)
         {
-            using (var client = new CliHttpClient())
+            var url = includeNightly ?
+                $"https://www.myget.org/F/abp-nightly/api/v3/flatcontainer/{packageId.ToLowerInvariant()}/index.json" :
+                $"https://api.nuget.org/v3-flatcontainer/{packageId.ToLowerInvariant()}/index.json";
+
+            var responseMessage = await HttpClient.GetAsync(url, CancellationTokenProvider.Token);
+
+            if (!responseMessage.IsSuccessStatusCode)
             {
-                var url = includeNightly ?
-                    $"https://www.myget.org/F/abp-nightly/api/v3/flatcontainer/{packageId.ToLowerInvariant()}/index.json" :
-                    $"https://api.nuget.org/v3-flatcontainer/{packageId.ToLowerInvariant()}/index.json";
-
-                var responseMessage = await client.GetAsync(url, CancellationTokenProvider.Token);
-
-                if (!responseMessage.IsSuccessStatusCode)
-                {
-                    throw new Exception("Remote server returns error! HTTP status code: " + responseMessage.StatusCode);
-                }
-
-                var result = await responseMessage.Content.ReadAsStringAsync();
-
-                var versions = JsonSerializer.Deserialize<NuGetVersionResultDto>(result).Versions.Select(x => SemanticVersion.Parse(x));
-
-                if (!includePreviews && !includeNightly)
-                {
-                    versions = versions.Where(x => !x.IsPrerelease);
-                }
-
-                return versions.Any() ? versions.Max() : null;
+                throw new Exception("Remote server returns error! HTTP status code: " + responseMessage.StatusCode);
             }
+
+            var result = await responseMessage.Content.ReadAsStringAsync();
+
+            var versions = JsonSerializer.Deserialize<NuGetVersionResultDto>(result).Versions.Select(x => SemanticVersion.Parse(x));
+
+            if (!includePreviews && !includeNightly)
+            {
+                versions = versions.Where(x => !x.IsPrerelease);
+            }
+
+            return versions.Any() ? versions.Max() : null;
         }
 
         public class NuGetVersionResultDto

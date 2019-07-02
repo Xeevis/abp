@@ -7,7 +7,8 @@ namespace Volo.Abp.Cli.Http
     {
         public CliHttpClientHandler()
         {
-            Proxy = WebRequest.GetSystemWebProxy();
+            // Throws System.PlatformNotSupportedException: Operation is not supported on this platform.
+            // Proxy = WebRequest.GetSystemWebProxy();
             DefaultProxyCredentials = CredentialCache.DefaultCredentials;
         }
     }

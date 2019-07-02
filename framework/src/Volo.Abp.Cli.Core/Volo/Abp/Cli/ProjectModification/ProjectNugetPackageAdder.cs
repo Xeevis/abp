@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -22,17 +23,20 @@ namespace Volo.Abp.Cli.ProjectModification
         protected ProjectNpmPackageAdder NpmPackageAdder { get; }
         protected DerivedClassFinder ModuleClassFinder { get; }
         protected ModuleClassDependcyAdder ModuleClassDependcyAdder { get; }
+        protected HttpClient HttpClient { get; }
 
         public ProjectNugetPackageAdder(
             IJsonSerializer jsonSerializer,
             ProjectNpmPackageAdder npmPackageAdder,
             DerivedClassFinder moduleClassFinder,
-            ModuleClassDependcyAdder moduleClassDependcyAdder)
+            ModuleClassDependcyAdder moduleClassDependcyAdder,
+            CliHttpClient cliHttpClient)
         {
             JsonSerializer = jsonSerializer;
             NpmPackageAdder = npmPackageAdder;
             ModuleClassFinder = moduleClassFinder;
             ModuleClassDependcyAdder = moduleClassDependcyAdder;
+            HttpClient = cliHttpClient.Client;
             Logger = NullLogger<ProjectNugetPackageAdder>.Instance;
         }
 
@@ -71,25 +75,22 @@ namespace Volo.Abp.Cli.ProjectModification
 
         protected virtual async Task<NugetPackageInfo> FindNugetPackageInfoAsync(string moduleName)
         {
-            using (var client = new CliHttpClient())
+            var url = $"{CliUrls.WwwAbpIo}api/app/nugetPackage/byName/?name=" + moduleName;
+
+            var response = await HttpClient.GetAsync(url);
+
+            if (!response.IsSuccessStatusCode)
             {
-                var url = $"{CliUrls.WwwAbpIo}api/app/nugetPackage/byName/?name=" + moduleName;
-
-                var response = await client.GetAsync(url);
-
-                if (!response.IsSuccessStatusCode)
+                if (response.StatusCode == HttpStatusCode.NotFound)
                 {
-                    if (response.StatusCode == HttpStatusCode.NotFound)
-                    {
-                        throw new CliUsageException($"'{moduleName}' nuget package could not be found!");
-                    }
-
-                    throw new Exception($"ERROR: Remote server returns '{response.StatusCode}'");
+                    throw new CliUsageException($"'{moduleName}' nuget package could not be found!");
                 }
 
-                var responseContent = await response.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<NugetPackageInfo>(responseContent);
+                throw new Exception($"ERROR: Remote server returns '{response.StatusCode}'");
             }
+
+            var responseContent = await response.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<NugetPackageInfo>(responseContent);
         }
     }
 }

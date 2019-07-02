@@ -26,14 +26,18 @@ namespace Volo.Abp.Cli.ProjectBuilding
 
         protected ICancellationTokenProvider CancellationTokenProvider { get; }
 
+        protected HttpClient HttpClient { get; }
+
         public AbpIoTemplateStore(
             IOptions<CliOptions> options,
             IJsonSerializer jsonSerializer,
-            ICancellationTokenProvider cancellationTokenProvider)
+            ICancellationTokenProvider cancellationTokenProvider,
+            CliHttpClient cliHttpClient)
         {
             JsonSerializer = jsonSerializer;
             CancellationTokenProvider = cancellationTokenProvider;
             Options = options.Value;
+            HttpClient = cliHttpClient.Client;
 
             Logger = NullLogger<AbpIoTemplateStore>.Instance;
         }
@@ -80,43 +84,37 @@ namespace Volo.Abp.Cli.ProjectBuilding
         {
             var postData = JsonSerializer.Serialize(new GetLatestTemplateVersionDto { Name = name });
 
-            using (var client = new CliHttpClient())
+            var responseMessage = await HttpClient.PostAsync(
+                $"{CliUrls.WwwAbpIo}api/download/template/get-version/",
+                new StringContent(postData, Encoding.UTF8, MimeTypes.Application.Json),
+                CancellationTokenProvider.Token
+            );
+
+            if (!responseMessage.IsSuccessStatusCode)
             {
-                var responseMessage = await client.PostAsync(
-                    $"{CliUrls.WwwAbpIo}api/download/template/get-version/",
-                    new StringContent(postData, Encoding.UTF8, MimeTypes.Application.Json),
-                    CancellationTokenProvider.Token
-                );
-
-                if (!responseMessage.IsSuccessStatusCode)
-                {
-                    throw new Exception("Remote server returns error! HTTP status code: " + responseMessage.StatusCode);
-                }
-
-                var result = await responseMessage.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<GetLatestTemplateVersionResultDto>(result).Version;
+                throw new Exception("Remote server returns error! HTTP status code: " + responseMessage.StatusCode);
             }
+
+            var result = await responseMessage.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<GetLatestTemplateVersionResultDto>(result).Version;
         }
 
         private async Task<byte[]> DownloadTemplateFileContentAsync(TemplateDownloadInputDto input)
         {
             var postData = JsonSerializer.Serialize(input);
 
-            using (var client = new CliHttpClient())
+            var responseMessage = await HttpClient.PostAsync(
+                $"{CliUrls.WwwAbpIo}api/download/template/",
+                new StringContent(postData, Encoding.UTF8, MimeTypes.Application.Json),
+                CancellationTokenProvider.Token
+            );
+
+            if (!responseMessage.IsSuccessStatusCode)
             {
-                var responseMessage = await client.PostAsync(
-                    $"{CliUrls.WwwAbpIo}api/download/template/",
-                    new StringContent(postData, Encoding.UTF8, MimeTypes.Application.Json),
-                    CancellationTokenProvider.Token
-                );
-
-                if (!responseMessage.IsSuccessStatusCode)
-                {
-                    throw new Exception("Remote server returns error! HTTP status code: " + responseMessage.StatusCode);
-                }
-
-                return await responseMessage.Content.ReadAsByteArrayAsync();
+                throw new Exception("Remote server returns error! HTTP status code: " + responseMessage.StatusCode);
             }
+
+            return await responseMessage.Content.ReadAsByteArrayAsync();
         }
 
         public class TemplateDownloadInputDto

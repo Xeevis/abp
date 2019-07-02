@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Volo.Abp.Cli.Http;
 using Volo.Abp.DependencyInjection;
@@ -24,6 +25,7 @@ namespace Volo.Abp.Cli.ProjectModification
         protected DerivedClassFinder DerivedClassFinder { get; }
         protected ProjectNpmPackageAdder ProjectNpmPackageAdder { get; }
         protected NpmGlobalPackagesChecker NpmGlobalPackagesChecker { get; }
+        protected HttpClient HttpClient { get; }
 
         public SolutionModuleAdder(
             IJsonSerializer jsonSerializer,
@@ -32,7 +34,9 @@ namespace Volo.Abp.Cli.ProjectModification
             EfCoreMigrationAdder efCoreMigrationAdder,
             DerivedClassFinder derivedClassFinder,
             ProjectNpmPackageAdder projectNpmPackageAdder,
-            NpmGlobalPackagesChecker npmGlobalPackagesChecker)
+            NpmGlobalPackagesChecker npmGlobalPackagesChecker,
+            CliHttpClient cliHttpClient
+            )
         {
             JsonSerializer = jsonSerializer;
             ProjectNugetPackageAdder = projectNugetPackageAdder;
@@ -41,6 +45,7 @@ namespace Volo.Abp.Cli.ProjectModification
             DerivedClassFinder = derivedClassFinder;
             ProjectNpmPackageAdder = projectNpmPackageAdder;
             NpmGlobalPackagesChecker = npmGlobalPackagesChecker;
+            HttpClient = cliHttpClient.Client;
             Logger = NullLogger<SolutionModuleAdder>.Instance;
         }
 
@@ -102,7 +107,7 @@ namespace Volo.Abp.Cli.ProjectModification
             }
 
             var dbMigrationsProject = projectFiles.FirstOrDefault(p => p.EndsWith(".DbMigrations.csproj"));
-            
+
             if (dbMigrationsProject == null)
             {
                 Logger.LogDebug("Solution doesn't have a \".DbMigrations\" project.");
@@ -119,34 +124,30 @@ namespace Volo.Abp.Cli.ProjectModification
 
             DbContextFileBuilderConfigureAdder.Add(dbContextFile, module.EfCoreConfigureMethodName);
 
-
             if (!skipDbMigrations)
             {
-                EfCoreMigrationAdder.AddMigration(dbMigrationsProject, module.Name); 
+                EfCoreMigrationAdder.AddMigration(dbMigrationsProject, module.Name);
             }
         }
 
         protected virtual async Task<ModuleInfo> FindModuleInfoAsync(string moduleName)
         {
-            using (var client = new CliHttpClient())
+            var url = $"{CliUrls.WwwAbpIo}api/app/module/byName/?name=" + moduleName;
+
+            var response = await HttpClient.GetAsync(url);
+
+            if (!response.IsSuccessStatusCode)
             {
-                var url = $"{CliUrls.WwwAbpIo}api/app/module/byName/?name=" + moduleName;
-
-                var response = await client.GetAsync(url);
-
-                if (!response.IsSuccessStatusCode)
+                if (response.StatusCode == HttpStatusCode.NotFound)
                 {
-                    if (response.StatusCode == HttpStatusCode.NotFound)
-                    {
-                        throw new CliUsageException($"ERROR: '{moduleName}' module could not be found!");
-                    }
-
-                    throw new Exception($"ERROR: Remote server returns '{response.StatusCode}'");
+                    throw new CliUsageException($"ERROR: '{moduleName}' module could not be found!");
                 }
 
-                var responseContent = await response.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<ModuleInfo>(responseContent);
+                throw new Exception($"ERROR: Remote server returns '{response.StatusCode}'");
             }
+
+            var responseContent = await response.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<ModuleInfo>(responseContent);
         }
     }
 }

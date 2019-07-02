@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Text;
 using Volo.Abp.Cli.Commands;
+using Volo.Abp.Cli.Http;
 using Volo.Abp.Domain;
 using Volo.Abp.IdentityModel;
 using Volo.Abp.Json;
@@ -22,6 +24,9 @@ namespace Volo.Abp.Cli
             // TODO: workaround until subsequent issues of https://github.com/dotnet/corefx/issues/30166 are resolved
             // a permanent fix will probably be published with the release of .net core 3.0: https://github.com/dotnet/corefx/issues/36553
             AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);
+
+            context.Services.AddHttpClient<CliHttpClient>()
+                .ConfigurePrimaryHttpMessageHandler(() => new CliHttpClientHandler());
 
             Configure<CliOptions>(options =>
             {
