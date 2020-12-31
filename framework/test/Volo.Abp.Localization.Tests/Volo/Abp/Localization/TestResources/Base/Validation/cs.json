@@ -1,7 +1,7 @@
 ﻿{
-  "culture": "cs",
+  "culture": "en",
   "texts": {
-    "ThisFieldIsRequired": "Toto pole je povinné",
-    "MaxLenghtErrorMessage": "Toto pole může mít nanejvýš '{0}' znaků"
+    "ThisFieldIsRequired": "This field is required",
+    "MaxLenghtErrorMessage": "This field can be maximum of '{0}' chars"
   }
 }
