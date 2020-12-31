@@ -1,7 +1,7 @@
 {
-  "culture": "cs",
+  "culture": "en",
   "texts": {
-    "ManageYourProfile": "Spravovat profil",
-    "SamplePageMessage": "Ukázková stránka pro modul MyProjectName"
+    "ManageYourProfile": "Manage your profile",
+    "SamplePageMessage": "A sample page for the MyProjectName module"
   }
 }
