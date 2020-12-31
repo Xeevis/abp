@@ -1,7 +1,7 @@
 {
-  "culture": "cs",
+  "culture": "en",
   "texts": {
-    "Settings": "Nastavení",
-    "SuccessfullySaved": "Úspěšně uloženo"
+    "Settings": "Settings",
+    "SuccessfullySaved": "Successfully saved"
   }
 }
