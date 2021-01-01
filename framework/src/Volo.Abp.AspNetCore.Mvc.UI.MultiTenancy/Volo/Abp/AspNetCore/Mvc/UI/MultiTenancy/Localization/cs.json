@@ -1,12 +1,12 @@
 {
-  "culture": "en",
+  "culture": "cs",
   "texts": {
-    "GivenTenantIsNotAvailable": "Given tenant is not available: {0}",
+    "GivenTenantIsNotAvailable": "Zvolený tenant není dostupný: {0}",
     "Tenant": "Tenant",
-    "Switch": "switch",
+    "Switch": "změnit",
     "Name": "Name",
-    "SwitchTenantHint": "Leave the name field blank to switch to the host side.",
-    "SwitchTenant": "Switch tenant",
-    "NotSelected": "Not selected"
+    "SwitchTenantHint": "Nechte pole prázdné ke změně na hostitele.",
+    "SwitchTenant": "Změnit tenant",
+    "NotSelected": "Nevybrán"
   }
 }
