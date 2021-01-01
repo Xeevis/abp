@@ -3,10 +3,10 @@
   "texts": {
     "GivenTenantIsNotAvailable": "Zvolený tenant není dostupný: {0}",
     "Tenant": "Tenant",
-    "Switch": "změnit",
+    "Switch": "přepnout",
     "Name": "Name",
-    "SwitchTenantHint": "Nechte pole prázdné ke změně na hostitele.",
-    "SwitchTenant": "Změnit tenant",
-    "NotSelected": "Nevybrán"
+    "SwitchTenantHint": "Ponechte pole názvu prázdné pro přepnutí na hostitele.",
+    "SwitchTenant": "Přepnout tenant",
+    "NotSelected": "Není vybráno"
   }
 }
