@@ -1,12 +1,12 @@
 {
   "culture": "cs",
   "texts": {
-    "DisplayName:Abp.Ldap.ServerHost": "Server host",
-    "Description:Abp.Ldap.ServerHost": "Server host",
-    "DisplayName:Abp.Ldap.ServerPort": "Server port",
-    "Description:Abp.Ldap.ServerPort": "Server port",
-    "DisplayName:Abp.Ldap.BaseDc": "Base domain component",
-    "Description:Abp.Ldap.BaseDc": "Base domain component",
+    "DisplayName:Abp.Ldap.ServerHost": "Hostitel serveru",
+    "Description:Abp.Ldap.ServerHost": "Hostitel serveru",
+    "DisplayName:Abp.Ldap.ServerPort": "Port serveru",
+    "Description:Abp.Ldap.ServerPort": "Port serveru",
+    "DisplayName:Abp.Ldap.BaseDc": "Základní doménový komponent",
+    "Description:Abp.Ldap.BaseDc": "Základní doménový komponent",
     "DisplayName:Abp.Ldap.UserName": "Username",
     "Description:Abp.Ldap.UserName": "Username",
     "DisplayName:Abp.Ldap.Password": "Heslo",
