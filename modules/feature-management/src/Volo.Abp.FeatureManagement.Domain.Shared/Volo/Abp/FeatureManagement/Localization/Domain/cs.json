@@ -2,9 +2,9 @@
   "culture": "cs",
   "texts": {
     "Features": "Features",
-    "NoFeatureFoundMessage": "Nejsou zde dostupné žádné funkce.",
-    "Permission:FeatureManagement": "Feature management",
-    "Permission:FeatureManagement.ManageHostFeatures": "Manage Host features",
-    "Volo.Abp.FeatureManagement:InvalidFeatureValue": "{0} feature value is not valid!"
+    "NoFeatureFoundMessage": "Žádná funkce není k dispozici.",
+    "Permission:FeatureManagement": "Správa funkcí",
+    "Permission:FeatureManagement.ManageHostFeatures": "Spravovat hostitelské funkce",
+    "Volo.Abp.FeatureManagement:InvalidFeatureValue": "Hodnota funkce {0} není platná!"
   }
 }
