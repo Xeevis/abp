@@ -10,7 +10,7 @@
     "DefaultErrorMessage401Detail": "K vykonání této operace se musíte nejprve přihlásit.",
     "DefaultErrorMessage403": "Nemáte oprávnění!",
     "DefaultErrorMessage403Detail": "Nemáte oprávnění k provedení této operace!",
-    "DefaultErrorMessage404": "Prostředek nenalezen!",
+    "DefaultErrorMessage404": "Dokument nebyl nalezen!",
     "DefaultErrorMessage404Detail": "Vyžádaný prostředek nebyl na serveru nalezen!",
     "EntityNotFoundErrorMessage": "Neexistující entita {0} s id = {1}!",
     "Error": "Chyba",
