@@ -9,7 +9,7 @@
     "DefaultErrorMessage401": "Nejste přihlášeni!",
     "DefaultErrorMessage401Detail": "K vykonání této operace se musíte nejprve přihlásit.",
     "DefaultErrorMessage403": "Nemáte oprávnění!",
-    "DefaultErrorMessage403Detail": "Není vám dovoleno vykonat tuto operaci!",
+    "DefaultErrorMessage403Detail": "Nemáte oprávnění k provedení této operace!",
     "DefaultErrorMessage404": "Prostředek nenalezen!",
     "DefaultErrorMessage404Detail": "Vyžádaný prostředek nebyl na serveru nalezen!",
     "EntityNotFoundErrorMessage": "Neexistující entita {0} s id = {1}!",
@@ -19,7 +19,7 @@
     "403Message": "Zakázáno",
     "404Message": "Stránka nenalezena",
     "500Message": "Interní chyba serveru",
-    "403MessageDetail": "You are not authorized to perform this operation!",
-    "404MessageDetail": "Sorry, there's nothing at this address."
+    "403MessageDetail": "Nemáte oprávnění k provedení této operace!",
+    "404MessageDetail": "Omlouváme se, na této adrese není nic."
   }
 }
