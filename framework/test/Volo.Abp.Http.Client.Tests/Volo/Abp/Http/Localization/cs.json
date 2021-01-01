@@ -1,6 +1,6 @@
 ﻿{
   "culture": "cs",
   "texts": {
-    "Volo.Abp.Http.DynamicProxying:10001": "Business exception with data: {0}"
+    "Volo.Abp.Http.DynamicProxying:10001": "Byznys výjimka s daty: {0}"
   }
 }
