@@ -2,17 +2,17 @@
   "culture": "cs",
   "texts": {
     "Documents": "Documents",
-    "BackToWebsite": "Zpět na stránky",
+    "BackToWebsite": "Zpět na webové stránky",
     "Contributors": "Přispěvatelé",
     "ShareOn": "Sdílet na",
     "Version": "Verze",
     "Edit": "Edit",
-    "LastEditTime": "Naposled upraveno",
+    "LastEditTime": "Poslední úprava",
     "Delete": "Delete",
     "ClearCache": "Clear cache",
     "ClearCacheConfirmationMessage": "Jste si jistí že chcete vymazat veškerou mezipaměť projektu \"{0}\"",
-    "ReIndexAllProjects": "ReIndexovat všechny projekty",
-    "ReIndexProject": "ReIndexovat projekt",
+    "ReIndexAllProjects": "Reindexovat všechny projekty",
+    "ReIndexProject": "Reindexovat projekt",
     "ReIndexProjectConfirmationMessage": "Opravdu reindexovat projekt \"{0}\"",
     "SuccessfullyReIndexProject": "Úspěšně reindexován projekt \"{0}\"",
     "ReIndexAllProjectConfirmationMessage": "Opravdu reindexovat všechny projekty?",
@@ -20,7 +20,7 @@
     "InThisDocument": "V tomto dokumentu",
     "GoToTop": "Přejít nahoru",
     "Projects": "Projekt(y)",
-    "NoProjectWarning": "Zatím zde není žádný projekt!",
+    "NoProjectWarning": "Zatím neexistují žádné projekty!",
     "DocumentNotFound": "Ups, vyžádaný dokument nebyl nalezen!",
     "ProjectNotFound": "Ups, vyžádaný projekt nebyl nalezen!",
     "NavigationDocumentNotFound": "Tato verze nemá navigační dokument!",
@@ -34,6 +34,6 @@
     "NewExplanation": "Vytvořeno v posledních dvou týdnech.",
     "UpdatedExplanation": "Aktualizováno v posledních dvou týdnech.",
     "Volo.Docs.Domain:010002": "ShortName {ShortName} už existuje.",
-    "Preview": "preview"
+    "Preview": "náhled"
   }
 }
