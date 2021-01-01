@@ -1,23 +1,23 @@
 {
-  "culture": "en",
+  "culture": "cs",
   "texts": {
-    "Menu:TenantManagement": "Tenant management",
-    "Tenants": "Tenants",
-    "NewTenant": "New tenant",
-    "TenantName": "Tenant name",
-    "DisplayName:TenantName": "Tenant name",
-    "TenantDeletionConfirmationMessage": "Tenant '{0}' will be deleted. Do you confirm that?",
-    "ConnectionStrings": "Connection Strings",
-    "DisplayName:DefaultConnectionString": "Default Connection String",
-    "DisplayName:UseSharedDatabase": "Use the Shared Database",
+    "Menu:TenantManagement": "Správa tenantů",
+    "Tenants": "Tenanty",
+    "NewTenant": "Nový tenant",
+    "TenantName": "Název tenantu",
+    "DisplayName:TenantName": "Název tenantu",
+    "TenantDeletionConfirmationMessage": "Tenant '{0}' bude smazán. Jste si jistí?",
+    "ConnectionStrings": "Connection stringy",
+    "DisplayName:DefaultConnectionString": "Výchozí connection string",
+    "DisplayName:UseSharedDatabase": "Použít sdílenou databázi",
     "ManageHostFeatures": "Manage Host features",
-    "Permission:TenantManagement": "Tenant management",
+    "Permission:TenantManagement": "Správa tenantů",
     "Permission:Create": "Create",
     "Permission:Edit": "Edit",
     "Permission:Delete": "Delete",
-    "Permission:ManageConnectionStrings": "Manage connection strings",
-    "Permission:ManageFeatures": "Manage features",
-    "DisplayName:AdminEmailAddress": "Admin Email Address",
-    "DisplayName:AdminPassword": "Admin Password"
+    "Permission:ManageConnectionStrings": "Spravovat connection stringy",
+    "Permission:ManageFeatures": "Spravovat funkce",
+    "DisplayName:AdminEmailAddress": "Email adresa správce",
+    "DisplayName:AdminPassword": "Heslo správce"
   }
 }
