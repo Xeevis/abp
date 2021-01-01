@@ -3,12 +3,12 @@
   "texts": {
     "Volo.IdentityServer:DuplicateIdentityResourceName": "Název Identity Resource již existuje: {Name}",
     "Volo.IdentityServer:DuplicateApiResourceName": "Název Api Resource již existuje: {Name}",
-    "Volo.IdentityServer:DuplicateApiScopeName": "Api Scope name already exist: {Name}",
+    "Volo.IdentityServer:DuplicateApiScopeName": "Název Api Scope již existuje: {Name}",
     "Volo.IdentityServer:DuplicateClientId": "ClientId již existuje: {ClientId}",
     "UserLockedOut": "Tento účet byl uzamčen z důvodu neúspěšných přihlášení. Přihlaste se prosím později.",
     "InvalidUserNameOrPassword": "Neplatné uživatelské jméno nebo heslo!",
     "LoginIsNotAllowed": "Není vám dovoleno se přihlásit! Musíte první potvrdit email/telefonní číslo.",
     "InvalidUsername": "Neplatné uživatelské jméno nebo heslo!",
-    "TheTargetUserIsNotLinkedToYou": "The target user is not linked to you!"
+    "TheTargetUserIsNotLinkedToYou": "Cílový uživatel s Vámi není propojen!"
   }
 }
