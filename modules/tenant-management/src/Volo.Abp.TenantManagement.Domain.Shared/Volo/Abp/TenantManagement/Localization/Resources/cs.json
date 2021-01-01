@@ -10,7 +10,7 @@
     "ConnectionStrings": "Řetězce připojení",
     "DisplayName:DefaultConnectionString": "Výchozí řetězec připojení",
     "DisplayName:UseSharedDatabase": "Použít sdílenou databázi",
-    "ManageHostFeatures": "Manage Host features",
+    "ManageHostFeatures": "Spravovat hostitelské funkce",
     "Permission:TenantManagement": "Správa tenantů",
     "Permission:Create": "Create",
     "Permission:Edit": "Edit",
