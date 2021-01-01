@@ -1,11 +1,11 @@
 {
   "culture": "cs",
   "texts": {
-    "InternalServerErrorMessage": "Během požadavku se vyskytla vnitřní chyba!",
-    "ValidationErrorMessage": "Neplatný požadavek!",
-    "ValidationNarrativeErrorMessageTitle": "Během ověřování byly zjištěny následující chyby.",
-    "DefaultErrorMessage": "Vyskytla se chyba!",
-    "DefaultErrorMessageDetail": "Server neposkytl detaily k chybě.",
+    "InternalServerErrorMessage": "Během vašeho požadavku došlo k vnitřní chybě!",
+    "ValidationErrorMessage": "Váš požadavek je neplatný!",
+    "ValidationNarrativeErrorMessageTitle": "Při ověřování byly zjištěny následující chyby.",
+    "DefaultErrorMessage": "Došlo k chybě!",
+    "DefaultErrorMessageDetail": "Server neodeslal podrobnosti o chybě.",
     "DefaultErrorMessage401": "Nejste přihlášeni!",
     "DefaultErrorMessage401Detail": "K vykonání této operace se musíte nejprve přihlásit.",
     "DefaultErrorMessage403": "Nemáte oprávnění!",
