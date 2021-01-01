@@ -1,7 +1,7 @@
 {
-  "culture": "en",
+  "culture": "cs",
   "texts": {
-    "HelloText": "Hello {0}",
-    "HowAreYou": "how are you?"
+    "HelloText": "Ahoj {0}",
+    "HowAreYou": "jak se máš?"
   }
 }
