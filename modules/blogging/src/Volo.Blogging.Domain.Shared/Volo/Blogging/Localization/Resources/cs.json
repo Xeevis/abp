@@ -10,7 +10,7 @@
     "Permission:Blogging": "Blog",
     "Permission:Blogs": "Blogy",
     "Permission:Posts": "Příspěvky",
-    "Permission:Tags": "Tagy",
+    "Permission:Tags": "Štítky",
     "Permission:Comments": "Komentáře",
     "Title": "Title",
     "Delete": "Delete",
@@ -51,7 +51,7 @@
     "CreationTime": "Vytvořeno",
     "Description": "Popis",
     "Blogs": "Blogy",
-    "Tags": "Tagy",
+    "Tags": "Štítky",
     "ShareOn": "Sdílet na",
     "TitleLengthWarning": "Zachovejte velikost titulku pod 60 znaků kvůli SEO!"
   }
