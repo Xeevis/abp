@@ -1,5 +1,5 @@
 ﻿{
-  "culture": "en",
+  "culture": "cs",
   "texts": {
     "Volo.Authorization:010001": "Authorization failed! Given policy has not granted.",
     "Volo.Authorization:010002": "Authorization failed! Given policy has not granted: {PolicyName}",
