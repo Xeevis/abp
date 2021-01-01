@@ -1,14 +1,14 @@
 {
   "culture": "cs",
   "texts": {
-    "VirtualFileExplorer": "Prohlížeč virtuálních souborů",
-    "VirtualFileType": "Typ virtuálního souborů",
-    "Menu:VirtualFileExplorer": "Prohlížeč virtuálních souborů",
+    "VirtualFileExplorer": "Průzkumník virtuálních souborů",
+    "VirtualFileType": "Typ virtuálního souboru",
+    "Menu:VirtualFileExplorer": "Průzkumník virtuálních souborů",
     "LastUpdateTime": "Čas poslední aktualizace",
-    "VirtualFileName": "Virtuální název souboru",
+    "VirtualFileName": "Název virtuálního souboru",
     "FileContent": "Obsah souboru",
     "Size": "Velikost",
-    "BackToRoot": "Zpět na kořen",
-    "EmptyFileInfoList": "Nejsou žádné virtuální soubory"
+    "BackToRoot": "Zpět do kořenového adresáře",
+    "EmptyFileInfoList": "Nejsou zde žádné virtuální soubory"
   }
 }
