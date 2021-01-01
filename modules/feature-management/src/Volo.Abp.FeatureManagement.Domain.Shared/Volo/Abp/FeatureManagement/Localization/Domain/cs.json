@@ -1,8 +1,8 @@
 {
-  "culture": "en",
+  "culture": "cs",
   "texts": {
     "Features": "Features",
-    "NoFeatureFoundMessage": "There isn't any available feature.",
+    "NoFeatureFoundMessage": "Nejsou zde dostupné žádné funkce.",
     "Permission:FeatureManagement": "Feature management",
     "Permission:FeatureManagement.ManageHostFeatures": "Manage Host features",
     "Volo.Abp.FeatureManagement:InvalidFeatureValue": "{0} feature value is not valid!"
