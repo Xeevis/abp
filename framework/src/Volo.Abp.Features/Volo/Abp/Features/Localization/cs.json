@@ -1,5 +1,5 @@
 ﻿{
-  "culture": "en",
+  "culture": "cs",
   "texts": {
     "Volo.Feature:010001": "Feature is not enabled: {FeatureName}",
     "Volo.Feature:010002": "Required features are not enabled. All of these features must be enabled: {FeatureNames}",
