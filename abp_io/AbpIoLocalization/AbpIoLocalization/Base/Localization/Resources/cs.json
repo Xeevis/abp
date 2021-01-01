@@ -1,5 +1,5 @@
 {
-  "culture": "en",
+  "culture": "cs",
   "texts": {
     "Volo.AbpIo.Domain:010004": "Maximum member count reached!",
     "Volo.AbpIo.Domain:010005": "Maximum owner count reached!",
