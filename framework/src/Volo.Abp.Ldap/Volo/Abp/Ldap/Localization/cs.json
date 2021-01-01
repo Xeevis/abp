@@ -1,5 +1,5 @@
 {
-  "culture": "en",
+  "culture": "cs",
   "texts": {
     "DisplayName:Abp.Ldap.ServerHost": "Server host",
     "Description:Abp.Ldap.ServerHost": "Server host",
@@ -9,7 +9,7 @@
     "Description:Abp.Ldap.BaseDc": "Base domain component",
     "DisplayName:Abp.Ldap.UserName": "Username",
     "Description:Abp.Ldap.UserName": "Username",
-    "DisplayName:Abp.Ldap.Password": "Password",
-    "Description:Abp.Ldap.Password": "Password"
+    "DisplayName:Abp.Ldap.Password": "Heslo",
+    "Description:Abp.Ldap.Password": "Heslo"
   }
 }
