@@ -1,0 +1,15 @@
+{
+  "culture": "cs",
+  "texts": {
+    "DisplayName:Abp.Ldap.ServerHost": "Hostitel serveru",
+    "Description:Abp.Ldap.ServerHost": "Hostitel serveru",
+    "DisplayName:Abp.Ldap.ServerPort": "Port serveru",
+    "Description:Abp.Ldap.ServerPort": "Port serveru",
+    "DisplayName:Abp.Ldap.BaseDc": "Základní doménový komponent",
+    "Description:Abp.Ldap.BaseDc": "Základní doménový komponent",
+    "DisplayName:Abp.Ldap.UserName": "Username",
+    "Description:Abp.Ldap.UserName": "Username",
+    "DisplayName:Abp.Ldap.Password": "Heslo",
+    "Description:Abp.Ldap.Password": "Heslo"
+  }
+}

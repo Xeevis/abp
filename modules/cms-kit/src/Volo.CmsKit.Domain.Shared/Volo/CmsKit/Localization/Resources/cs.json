@@ -1,0 +1,29 @@
+{
+  "culture": "cs",
+  "texts": {
+    "CommentAuthorizationExceptionMessage": "Tyto komentáře nejsou povoleny pro veřejné zobrazení.",
+    "Comments": "Komentáře",
+    "Delete": "Delete",
+    "Edit": "Edit",
+    "LoginToAddComment": "Pro přidání komentáře se přihlaste",
+    "LoginToRate": "Pro hodnocení se přihlaste",
+    "LoginToReply": "Pro odpověď se přihlaste",
+    "MessageDeletionConfirmationMessage": "Tento komentář bude zcela vymazán.",
+    "Permission:CmsKit": "CmsKit",
+    "Permission:TagManagement": "Správa štítků",
+    "Permission:TagManagement.Create": "Vytvořit štítek",
+    "Permission:TagManagement.Delete": "Vymazat štítek",
+    "Permission:TagManagement.Update": "Upravit štítek",
+    "PickYourReaction": "Vyberte svou reakci",
+    "RatingUndoMessage": "Vaše hodnocení bude zrušeno.",
+    "Reply": "Odpovědět",
+    "Send": "Odeslat",
+    "Star": "Hvězda",
+    "TagDeletionConfirmationMessage": "Opravdu chete vymazat štítek '{0}'?",
+    "Tags": "Štítky",
+    "Undo": "Vrátit",
+    "Update": "Aktualizovat",
+    "YourComment": "Váš komentář",
+    "YourReply": "Vaše odpověď"
+  }
+}

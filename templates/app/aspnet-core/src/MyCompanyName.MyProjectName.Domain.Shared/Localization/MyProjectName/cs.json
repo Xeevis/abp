@@ -1,8 +1,8 @@
 {
   "culture": "cs",
   "texts": {
-    "Menu:Home": "Úvod",
+    "Menu:Home": "Domů",
     "Welcome": "Vítejte",
-    "LongWelcomeMessage": "Vítejte v aplikaci. Toto je startovací projekt založený na ABP frameworku. Pro více informací, navštivte abp.io."
+    "LongWelcomeMessage": "Vítejte ve Vaší nové aplikaci. Toto je startovací projekt založený na ABP frameworku. Pro více informací, navštivte abp.io."
   }
 }

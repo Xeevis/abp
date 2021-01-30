@@ -1,23 +1,25 @@
 {
   "culture": "cs",
   "texts": {
-    "InternalServerErrorMessage": "Během požadavku se vyskytla vnitřní chyba!",
-    "ValidationErrorMessage": "Neplatný požadavek!",
-    "ValidationNarrativeErrorMessageTitle": "Během ověřování byly zjištěny následující chyby.",
-    "DefaultErrorMessage": "Vyskytla se chyba!",
-    "DefaultErrorMessageDetail": "Server neposkytl detaily k chybě.",
+    "InternalServerErrorMessage": "Během vašeho požadavku došlo k vnitřní chybě!",
+    "ValidationErrorMessage": "Váš požadavek je neplatný!",
+    "ValidationNarrativeErrorMessageTitle": "Při ověřování byly zjištěny následující chyby.",
+    "DefaultErrorMessage": "Došlo k chybě!",
+    "DefaultErrorMessageDetail": "Server neodeslal podrobnosti o chybě.",
     "DefaultErrorMessage401": "Nejste přihlášeni!",
     "DefaultErrorMessage401Detail": "K vykonání této operace se musíte nejprve přihlásit.",
     "DefaultErrorMessage403": "Nemáte oprávnění!",
-    "DefaultErrorMessage403Detail": "Není vám dovoleno vykonat tuto operaci!",
-    "DefaultErrorMessage404": "Prostředek nenalezen!",
-    "DefaultErrorMessage404Detail": "Vyžádaný prostředek nebyl na serveru nalezen!",
-    "EntityNotFoundErrorMessage": "Neexistující entita {0} s id = {1}!",
+    "DefaultErrorMessage403Detail": "Nemáte oprávnění k provedení této operace!",
+    "DefaultErrorMessage404": "Dokument nebyl nalezen!",
+    "DefaultErrorMessage404Detail": "Požadovaný dokument nebyl na serveru nalezen!",
+    "EntityNotFoundErrorMessage": "Neexistuje žádná entita {0} s id = {1}!",
     "Error": "Chyba",
     "UnhandledException": "Neošetřená výjimka!",
-    "401Message": "Neoprávněno",
-    "403Message": "Zakázáno",
+    "401Message": "Neoprávněné",
+    "403Message": "Zakázané",
     "404Message": "Stránka nenalezena",
-    "500Message": "Interní chyba serveru"
+    "500Message": "Vnitřní chyba serveru",
+    "403MessageDetail": "Nemáte oprávnění k provedení této operace!",
+    "404MessageDetail": "Omlouváme se, na této adrese není nic."
   }
 }

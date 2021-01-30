@@ -3,8 +3,8 @@
   "texts": {
     "DocsTitle": "VoloDocs",
     "WelcomeVoloDocs": "Vítejte ve VoloDocs!",
-    "NoProjectWarning": "Zatím zde není žádný projekt!",
-    "CreateYourFirstProject": "Klikněte zde k vytvoření vašeho prvního projektu",
+    "NoProjectWarning": "Zatím není definován žádný projekt!",
+    "CreateYourFirstProject": "Klikněte zde pro zahájení Vašeho prvního projektu",
     "NoProject": "Žádný projekt!"
   }
 }

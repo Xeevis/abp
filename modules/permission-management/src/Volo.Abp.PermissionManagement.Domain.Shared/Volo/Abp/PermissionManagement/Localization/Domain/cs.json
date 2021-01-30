@@ -3,8 +3,8 @@
   "texts": {
     "Permissions": "Oprávnění",
     "OnlyProviderPermissons": "Pouze tento poskytovatel",
-    "All": "Všechna",
-    "SelectAllInAllTabs": "Dát veškerá oprávnění",
+    "All": "Vše",
+    "SelectAllInAllTabs": "Udělit veškerá oprávnění",
     "SelectAllInThisTab": "Vybrat vše"
   }
 }
